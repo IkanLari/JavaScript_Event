@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>  
+    <p>onclick event</p>
+    <button onclick="onclickFunction()">Click me</button>
+
+    <p>ondblclick event</p>
+    <button ondblclick="ondblclickFunction()">Click me</button>
+
+    <p>onmousedown and onmouseup event</p>
+    <button onmousedown="onmousedownFunction()">Click me</button>
+
+    <p style="text-align: center;margin-bottom: -20px;">oncontextmenu event</p>
+    <div id="myDiv" style="border:1px solid black;text-align:center;margin-top: 30px;">
+        <p>Right-click in this box!</p>
+        <p>Context menu is disabled.</p>
+    </div>
+
+    <br>
+
+    <a href="onmousedown_and_onmouseup.html">onmousedown and onmouseup</a>
+    <p>(note : there is a problem at <b>"color"</b> onmousedown and onmouseup in this page, so i make it in another page)</p>
+
+    <br>
+
+    <p>onmousecenter and onmouseleave event</p>
+    <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" src="../event/minecraft.jpg" alt="minecraft" width="100" height="100">
+
+    <p>onmouseover and onmouseout event</p>
+    <img onmouseenter="bigPic(this)" onmouseleave="normalPic(this)" src="../event/profile picture whatsapp.jpeg" alt="just cute :)" width="100" height="100">
+    <script>
+        // onclick event
+        function onclickFunction() {
+            alert("hello word");
+        }
+
+        // ondblclick event
+        function ondblclickFunction() {
+            alert("hello word");
+        }
+
+        // onmousedown event
+        function onmousedownFunction() {
+            alert("hello word");
+        }
+        
+        // oncontextmenu event
+        const div = document.getElementById("myDiv");
+        div.addEventListener("contextmenu", (e) => {e.preventDefault()});
+
+        // onmousecenter and onmouseleave event
+        function bigImg(x) {
+            x.style.height = "200px";
+            x.style.width = "200px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "100px";
+            x.style.width = "100px";
+        }
+
+        // onmouseover and onmouseout event
+        function bigPic(x) {
+            x.style.height = "200px";
+            x.style.width = "200px";
+        }
+
+        function normalPic(x) {
+            x.style.height = "100px";
+            x.style.width = "100px";
+        }
+    </script>
+</body>
+</html>
